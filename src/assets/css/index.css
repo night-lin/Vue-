@@ -1,0 +1,512 @@
+/*全局通用*/
+
+@font-face {
+  font-family: 'iconfont';
+  /* project id 261483 */
+  src: url('//at.alicdn.com/t/font_u1ksl8049ju1sjor.eot');
+  src: url('//at.alicdn.com/t/font_u1ksl8049ju1sjor.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_u1ksl8049ju1sjor.woff') format('woff'), url('//at.alicdn.com/t/font_u1ksl8049ju1sjor.ttf') format('truetype'), url('//at.alicdn.com/t/font_u1ksl8049ju1sjor.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: 'iconfont';
+  font-style: normal;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  /* font-family:Sansation;*/
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+
+/* 字体大小 */
+
+.font-xx-large {
+  font-size: 9.2rem;
+}
+
+.font-x-large {
+  font-size: 6rem;
+}
+
+.font-large {
+  font-size: 3rem;
+}
+
+.font-x-middle {
+  font-size: 1.8rem;
+}
+
+.font-middle {
+  font-size: 1.6rem;
+}
+
+.font-small {
+  font-size: 1.4rem;
+}
+
+.font-x-small {
+  font-size: 1.2rem;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container-fluid {
+  padding: 0 20px;
+}
+
+.tx-le {
+  text-align: left;
+}
+
+.tx-center {
+  text-align: center;
+}
+
+.tx-ri {
+  text-align: right;
+}
+
+.top-nav a {
+  color: #fff;
+}
+
+.font-gray {
+  color: #afafaf;
+}
+
+.font-light {
+  color: #1bc8ff;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/* 公共样式 */
+
+#wrap {
+  min-height: 100vh;
+  background: rgba(30, 53, 87, .8);
+  color: #fff;
+  /* background-image:url(../image/timg.jpg);*/
+}
+
+.top-nav {
+  padding: 20px 0px;
+  color: #fff;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #fff;
+}
+
+.home .top-nav {
+  border-bottom: 0px;
+}
+
+
+/*加载动画*/
+
+.demo-spin-icon-load {
+  animation: ani-demo-spin 1s linear infinite;
+}
+
+@keyframes ani-demo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.demo-spin-col {
+  height: 100vh;
+  position: relative;
+  border: 1px solid #eee;
+}
+
+
+/*Home组件*/
+
+.now-state {
+  margin-bottom: 0;
+  text-align: center;
+  background: none;
+}
+
+.last-update {
+  text-align: left;
+}
+
+
+/*24小时天气*/
+
+.today-weather {
+  border-top: 1px solid #586b88;
+  border-bottom: 1px solid #586b88;
+  padding: 15px 0;
+  height: 130px;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.hourly-time {
+  height: 3rem;
+  color: #e3e8ee;
+}
+
+.today-weather ul {
+  height: 93px;
+  width: 120rem;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.today-weather li {
+  width: 5rem;
+  display: inline-block
+}
+
+
+/*一周天气*/
+
+.week-weather li {
+  height: 4rem;
+  display: block;
+  border-bottom: solid 1px #586b88;
+}
+
+.week-weather li span {
+  line-height: 4rem;
+}
+
+
+/*风向风力*/
+
+.wind-state {
+  padding-top: 2rem;
+  border-bottom: solid 1px #bfbfbf;
+}
+
+.wind-level {
+  text-indent: 4rem;
+  padding-top: 43px;
+}
+
+.rotate-wind {
+  display: inline-block;
+  animation: ani-wind-rotate 2s linear infinite;
+}
+
+@keyframes ani-wind-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/*月相*/
+
+.moon-state {
+  height: 3rem;
+  line-height: 3rem;
+}
+
+
+/* 日相 */
+
+.sun-box {
+  border-bottom: 2px solid #fff;
+}
+
+.sun-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2em;
+}
+
+.semi-circle {
+  width: 70vw;
+  height: 35vw;
+  margin: 0 auto;
+  border: 1px dashed #fff;
+  border-bottom: 0px solid #fff;
+  border-radius: 35vw 35vw 0 0;
+  position: relative;
+}
+
+.rotate-sun {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-bottom: -15px;
+  margin-left: -15px;
+  animation: ani-sun-rotate 10s linear infinite;
+}
+
+@keyframes ani-sun-rotate {
+  0% {
+    transform: rotate(-180deg) translate(35vw);
+    -ms-transform: rotate(-180deg) translate(35vw);
+    -moz-transform: rotate(-180deg) translate(35vw);
+    -webkit-transform: rotate(-180deg) translate(35vw);
+    -o-transform: rotate(-180deg) translate(35vw);
+  }
+  100% {
+    transform: rotate(0deg) translate(35vw);
+    -ms-transform: rotate(0deg) translate(35vw);
+    -moz-transform: rotate(0deg) translate(35vw);
+    -webkit-transform: rotate(0deg) translate(35vw);
+    -o-transform: rotate(0deg) translate(35vw);
+  }
+}
+
+.sun-time {
+  width: 80vw;
+  margin: auto;
+}
+.now-state .ivu-spin-fix{
+  min-height: 100vh;
+  background: rgba(30, 53, 87, .8);
+}
+
+/*Manangue组件*/
+
+.city-list ul {
+  list-style: none;
+}
+
+.city-list li {
+  height: 6rem;
+  overflow: hidden;
+  background: #506688;
+  border-bottom: solid 1px #5b7296;
+}
+
+.city-name span {
+  line-height: 6rem;
+}
+
+.delete-city {
+  line-height: 6rem;
+  color: #ff3008;
+}
+/* 加载中 */
+.city-weather .ivu-spin-text{
+  color: #fff;
+  text-align: right;
+  line-height: 6rem;
+}
+
+
+/* AddCity页面 */
+
+#search {
+  position: relative;
+}
+
+.city-search {
+  color: #c3c3c3;
+  width: 80%;
+  margin: 10px 10%;
+  position: relative;
+  height: 3rem;
+  border: 0px;
+  border-radius: 40px;
+  background: #566f94;
+  text-indent: 1em;
+  outline: none;
+}
+
+.delete-icon {
+  position: absolute;
+  right: 10%;
+  margin-right: 1rem;
+  top: 1.5rem;
+}
+
+.nav-recommend {
+  text-indent: 1em;
+  background: #566f94;
+  line-height: 40px;
+}
+
+.city-add-list ul {
+  border-collapse: collapse;
+}
+
+.city-add-list li {
+  margin-left: 1px;
+  border: 1px solid #c7c7c7;
+  border-top: 0px;
+  border-left: 0px;
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+
+/* 搜索结果*/
+
+.search-result-city li {
+  border-bottom: solid 1px #c7c7c7;
+  padding: 20px;
+}
+
+.city-add-list .col-xs-4 {
+  padding: 0;
+}
+
+
+/* setting 页面*/
+
+.set-list li {
+  border-bottom: 1px solid #c7c7c7;
+  line-height: 4rem;
+  height: 4rem;
+}
+
+.tempera-unit li label {
+  width: 100%;
+  display: block;
+}
+
+.tempera-unit ul {
+  list-style: none;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.tempera-unit li {
+  font-size:1.4rem; 
+  height: 4rem;
+  line-height: 4rem;
+  border-bottom: 1px #b9b9b9 solid;
+}
+
+.unit-radio {
+  width: 100px;
+  width: 1em;
+  height: 1em;
+}
+
+.text-upper {
+  text-transform: capitalize;
+}
+
+
+/* 模态框样式 */
+
+.modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30%;
+  bottom: 0;
+  z-index: 1001;
+  outline: 0;
+  overflow: scroll;
+  margin: 20px auto;
+  display: block;
+}
+
+.modal-dialog {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 200px;
+  padding: 50px 40px;
+  background: #fff;
+}
+
+.modal-backup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+
+/*模态框单组件样式*/
+
+.set-dialog .modal-confirm-dialog {
+  width: 96%;
+  border-radius: 20px;
+  background: #e2e4e3;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  color: #212322;
+  transform: translate(-50%, 0);
+  background: #e3e3e3;
+}
+.set-dialog .title{
+  padding: 10px;
+}
+.set-dialog .modal-confirm-content {
+  border: 0;
+  border-style: none;
+}
+
+.set-dialog .modal-confirm-header {
+  text-align: center;
+  font-size: 2.2rem;
+  border-bottom: 3px #b9b9b9 solid;
+}
+
+.set-dialog .modal-confirm-btn {
+  width:90%;
+  margin-left: 5%;
+  background: #f7f7f7;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 40px;
+  margin-bottom:20px; 
+}
+
+.modal-confirm-btn a {
+  display: block;
+}
+
+/**/
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
